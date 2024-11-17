@@ -1,0 +1,89 @@
+// 樣式表
+$primary: #1c3150;
+$primary2: #4d6489;
+$secondary: #78809d;
+$secondary2: #aaa2b1;
+$secondary3: #dbc6c0;
+$primaryText: white;
+$note-color: #8c8c8c;
+
+//需要時可取用 pink
+$p-50: #b5bdc9;
+$p-100: #97a7c0;
+$p-200: #95a8c4;
+$p-300: #6b8ab8;
+$p-400: #679ec0;
+$p-500: #528cb1;
+$p-600: #527291;
+$p-700: #284f79;
+$p-800: #233b5f;
+$p-900: #122247;
+
+//淡粉 light-pink ( lp不是亂取的 >"< )
+$lp-50: #fff5f4;
+$lp-100: #fff2f1;
+$lp-200: #ffecea;
+$lp-300: #ffe6e4;
+$lp-400: #ffe0dd;
+$lp-500: #ffdad7;
+$lp-600: #d6b7b5;
+$lp-700: #ad9492;
+$lp-800: #857170;
+$lp-900: #5c4e4d;
+
+//需要時可取用 black
+$g-50: #c6c6c6;
+$g-100: #b6b6b6;
+$g-200: #959595;
+$g-300: #747474;
+$g-400: #545454;
+$g-500: #333333;
+$g-600: #2b2b2b;
+$g-700: #232323;
+$g-800: #1b1b1b;
+$g-900: #121212;
+
+/*🐤font*/
+$major-text: 'Noto Sans TC', 'Roboto', sans-serif;
+$text-bebas: 'Bebas Neue', sans-serif;
+
+/*🐤布局函式*/
+
+@mixin flex-center($justify: center, $align: center, $direction: row) {
+	/*定位函式*/
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+/*使用方法
+.container {
+  @include flex-center(center, center, column);
+}
+*/
+
+@mixin text-ellipsis {
+	/*內文截斷*/
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+/*使用方法
+.title {
+  width: 200px;
+  @include text-ellipsis;
+}
+*/
+
+@mixin multiline-ellipsis($lines: 2) {
+	/*多行內文截斷*/
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+/*使用方法
+.description {
+  @include multiline-ellipsis(3);
+}
+*/
