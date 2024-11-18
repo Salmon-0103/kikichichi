@@ -49,7 +49,6 @@
 	font-weight: bold;
 	background-color: $p-200;
 	transition: background-color 0.2s, color 0.2s, transform 0.2s;
-
 	&:hover {
 		transform: scale(1.1);
 	}
@@ -57,7 +56,7 @@
 
 // 當前頁面
 .activePage {
-	background-color: #fe6f67;
+	background-color: #1c3150;
 	color: white;
-	border-color: #fe6f67;
+	border-color: #1c3150;
 }

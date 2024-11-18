@@ -4,7 +4,6 @@ import Header from '@/components/header';
 import Suggest from '@/components/news/suggest';
 import Footer from '@/components/footer';
 import styles from '@/styles/newsDetail.module.scss';
-import LessonCard from '@/components/lesson/lesson-card';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 
@@ -27,22 +26,6 @@ export default function NewsDetail(props) {
 				.catch((error) => console.error('拿不到新聞資料', error));
 		}
 	}, [id]);
-
-	// // 抓取產品資料 (用於猜你喜歡)
-	// useEffect(() => {
-	// 	axios
-	// 		.get(`http://localhost:3005/api/product`)
-	// 		.then((res) => setProducts(res.data))
-	// 		.catch((error) => console.error('拿不到產品資料', error));
-	// }, []);
-
-	// // 抓取課程資料 (用於推薦課程)
-	// useEffect(() => {
-	// 	axios
-	// 		.get(`http://localhost:3005/api/lesson`)
-	// 		.then((res) => setLessons(res.data))
-	// 		.catch((error) => console.error('拿不到課程資料', error));
-	// }, []);
 
 	// 移除 content 中的 <p></p> 標籤
 	const cleanContent = (content) => {
@@ -85,40 +68,9 @@ export default function NewsDetail(props) {
 						</div>
 					</div>
 
-					{/* <div className={`${styles['LYT-detail-bg']} m-0`}>
-						{/* 猜你喜歡 - 使用產品資料 */}
-					{/* <h1 className={`${styles['LYT-suggeTitle']} pt-5`}>猜你喜歡</h1>
-						<div className="row justify-content-center">
-							<div className="news-card-group d-flex flex-wrap justify-content-center">
-								{product.slice(0, 4).map((product) => (
-									<Suggest
-										key={product.id}
-										id={product.id}
-										name={product.name}
-										price={`NTD ${product.price}`}
-										file_name={product.file_name}
-									/>
-								))}
-							</div> */}
-
-					{/* 推薦課程 - 使用課程資料
-							<h1 className={`${styles['LYT-suggeTitle']} mt-2 pt-5`}>推薦課程</h1>
-							<div className="news-card-group d-flex flex-wrap justify-content-center">
-								{lessons.slice(0, 4).map((lesson) => (
-									<LessonCard
-										key={lesson.id}
-										id={lesson.id}
-										name={lesson.name}
-										img={lesson.img_path}
-										date={lesson.start_date}
-										price={`NTD ${lesson.price}`}
-										des={lesson.description}
-									/>
-								))}
-							</div> */}
-					{/* </div>
-					</div> */}
-					<Footer />
+					<div className={`${styles['LYT-detail-bg']} m-0`}>
+						<Footer />
+					</div>
 				</>
 			) : (
 				<h1>載入中...</h1>

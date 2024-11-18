@@ -81,11 +81,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange, changeColor = 'whit
 				onClick={() => onPageChange(currentPage - 1)}
 				disabled={currentPage === 1}
 			>
-				<SlControlPlay
-					style={{ transform: 'rotate(180deg)' }}
-					size={16}
-					color={changeColor}
-				/>
+				<SlControlPlay style={{ transform: 'rotate(180deg)' }} size={20} color="#1c3150" />
 			</button>
 			<div className={styles.pageNumbersContainer}>{renderPageNumbers()}</div>
 			<button
@@ -93,7 +89,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange, changeColor = 'whit
 				onClick={() => onPageChange(currentPage + 1)}
 				disabled={currentPage === totalPages}
 			>
-				<SlControlPlay size={16} color={changeColor} />
+				<SlControlPlay size={20} color="#1c3150" />
 			</button>
 		</div>
 	);

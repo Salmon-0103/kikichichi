@@ -37,9 +37,6 @@ export default function News() {
 	console.log(filterBox);
 	console.log(newsToShow);
 
-	// 右側
-	const smNewsToShow = news.slice(0, 6);
-
 	useEffect(() => {
 		// 請求 news 表數據
 		axios
@@ -100,35 +97,8 @@ export default function News() {
 					</div>
 				</div>
 
-				<div className="row justify-content-between">
-					{/* 右側sidebar
-					{showList && (
-						<div className={`${styles['LYT-sm-news-box-filter']} d-md-none`}>
-							<h2>最新文章</h2>
-							{smNewsToShow.map((news) => (
-								<Sidebar
-									key={news.id}
-									class_name={news.class_name}
-									title={news.title}
-								/>
-							))}
-						</div>
-					)}
-					<div className={`${styles['LYT-sm-news-box']} col-auto`}>
-						<div className="text-center mb-3">
-							<p className="fs-4 fw-bolder">最新文章</p>
-							{smNewsToShow.map((news) => (
-								<Sidebar
-									key={news.id}
-									id={news.id}
-									title={news.title}
-									product_class={news.product_class}
-								/>
-							))}
-						</div>
-					</div> */}
-
-					<div className="news-card-group d-flex flex-wrap col-sm-9 col-md-8 justify-content-around">
+				<div className="row justify-content-center">
+					<div className="news-card-group d-flex flex-wrap col-sm-9 col-md-8 justify-content-center">
 						{newsToShow
 							.filter((item) => item.activation === 1)
 							.map((item) => (
@@ -145,7 +115,7 @@ export default function News() {
 			</div>
 
 			{/* 分頁 */}
-			<div className="mb-3">
+			<div className="mt-5 mb-3">
 				<Pagination
 					currentPage={currentPage}
 					totalPages={totalPages}

@@ -66,10 +66,10 @@ export default function FilterBox({ news, onFilter }) {
 						sx={{
 							backgroundColor: '#ffffff',
 							height: '100%',
-							color: '#fe6f67',
+							color: '#1c3150',
 							borderRadius: '30px',
 							'& .MuiOutlinedInput-notchedOutline': {
-								borderColor: '#fe6f67',
+								borderColor: '#1c3150',
 							},
 						}}
 					>
@@ -95,11 +95,11 @@ export default function FilterBox({ news, onFilter }) {
 						displayEmpty
 						sx={{
 							background: '#ffffff',
-							color: '#fe6f67',
+							color: '#1c3150',
 							height: '100%',
 							borderRadius: '30px',
 							'& .MuiOutlinedInput-notchedOutline': {
-								borderColor: '#fe6f67',
+								borderColor: '#1c3150',
 							},
 						}}
 					>

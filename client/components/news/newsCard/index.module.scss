@@ -1,74 +1,41 @@
 @import '@/styles/globals-var.scss';
+
 .LYT-card {
-	left: 2.5rem;
-	border: 0;
-	margin: 2rem 1rem 0 0;
-	width: 260px;
-	height: 360px;
-	transition: 0.5s;
-}
-.LYT-card-top {
 	border-radius: 25px;
-	position: relative;
+	display: flex;
+	flex-direction: row; /* 水平排列圖片和文字 */
+	align-items: center; /* 讓圖片和文字垂直居中對齊 */
 	.LYT-news-card-img {
-		width: 100%;
 		object-fit: cover;
 		border-radius: 40px;
+		margin-bottom: 1rem;
+		margin-right: 20px;
 	}
 }
-.LYT-card-body {
-	display: flex;
-	.LYT-card-body-right {
-		display: flex;
-		justify-content: flex-end;
-	}
+
+.LYT-content {
+	position: relative;
+	width: 35rem;
 	button {
 		background-color: $primary;
 		color: #fff;
 	}
 }
 
-.LYT-hover-content {
+.LYT-btn {
 	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: $g-100;
-	color: $primaryText;
-	border-radius: 10px;
-	padding: 10px;
-	margin: 0 0 32px 0;
-	opacity: 0;
-	transition: 0.5s;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 4;
-	overflow: hidden;
-	word-break: break-word;
-	button {
-		position: absolute;
-		right: 15px;
-		bottom: 10px;
+	right: 15px;
+	bottom: 10px;
+	background-color: $primary;
+	color: #fff;
+	&:hover {
 		background-color: $primary;
 		color: #fff;
-		&:hover {
-			background-color: $primary;
-			color: #fff;
-		}
-		&:active {
-			background-color: $primary;
-			color: #fff;
-		}
-	}
-	&:hover {
 		opacity: 1;
 	}
-	.LYT-ellipsis {
-		overflow: hidden;
-		display: -webkit-box;
-		-webkit-line-clamp: 7; // 行數
-		-webkit-box-orient: vertical;
-		white-space: normal;
+	&:active {
+		background-color: $primary;
+		color: #fff;
 	}
 }
 

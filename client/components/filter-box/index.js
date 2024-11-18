@@ -47,9 +47,9 @@ export default function FilterBox(props) {
 					<InputLabel
 						id="demo-simple-select-label"
 						sx={{
-							color: '#fe6f67',
+							color: '#1c3150',
 							'&.Mui-focused': {
-								color: '#fe6f67', // 聚焦時的外框顏色
+								color: '#1c3150', // 聚焦時的外框顏色
 							},
 						}}
 					>
@@ -62,39 +62,39 @@ export default function FilterBox(props) {
 						label="type"
 						onChange={handleChangeType}
 						sx={{
-							color: '#fe6f67',
+							color: '#1c3150',
 							borderRadius: '30px',
 							'& .MuiOutlinedInput-notchedOutline': {
-								borderColor: '#fe6f67', // 預設外框顏色
+								borderColor: '#1c3150', // 預設外框顏色
 							},
 							'&:hover .MuiOutlinedInput-notchedOutline': {
-								borderColor: '#fe6f67', // 滑鼠懸停外框顏色
+								borderColor: '#1c3150', // 滑鼠懸停外框顏色
 							},
 							'&.Mui-focused .MuiOutlinedInput-notchedOutline': {
 								minWidth: 120,
-								borderColor: '#fe6f67', // 聚焦時的外框顏色
+								borderColor: '#1c3150', // 聚焦時的外框顏色
 							},
 						}}
 					>
-						<MenuItem value={'cake'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'cake'} sx={{ color: '#1c3150' }}>
 							蛋糕
 						</MenuItem>
-						<MenuItem value={'cookies'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'cookies'} sx={{ color: '#1c3150' }}>
 							餅乾
 						</MenuItem>
-						<MenuItem value={'tart'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'tart'} sx={{ color: '#1c3150' }}>
 							塔/派
 						</MenuItem>
-						<MenuItem value={'puff'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'puff'} sx={{ color: '#1c3150' }}>
 							泡芙
 						</MenuItem>
-						<MenuItem value={'icecream'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'icecream'} sx={{ color: '#1c3150' }}>
 							冰淇淋
 						</MenuItem>
-						<MenuItem value={'cannele'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'cannele'} sx={{ color: '#1c3150' }}>
 							可麗露
 						</MenuItem>
-						<MenuItem value={'else'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'else'} sx={{ color: '#1c3150' }}>
 							其他
 						</MenuItem>
 					</Select>
@@ -103,9 +103,9 @@ export default function FilterBox(props) {
 					<InputLabel
 						id="demo-simple-select-label"
 						sx={{
-							color: '#fe6f67',
+							color: '#1c3150',
 							'&.Mui-focused': {
-								color: '#fe6f67', // 聚焦時的外框顏色
+								color: '#1c3150', // 聚焦時的外框顏色
 							},
 						}}
 					>
@@ -118,36 +118,36 @@ export default function FilterBox(props) {
 						label="sort"
 						onChange={handleChangeSort}
 						sx={{
-							color: '#fe6f67',
+							color: '#1c3150',
 							borderRadius: '30px',
 							'& .MuiOutlinedInput-notchedOutline': {
-								borderColor: '#fe6f67', // 預設外框顏色
+								borderColor: '#1c3150', // 預設外框顏色
 							},
 							'&:hover .MuiOutlinedInput-notchedOutline': {
-								borderColor: '#fe6f67', // 滑鼠懸停外框顏色
+								borderColor: '#1c3150', // 滑鼠懸停外框顏色
 							},
 							'&.Mui-focused .MuiOutlinedInput-notchedOutline': {
 								minWidth: 120,
-								borderColor: '#fe6f67', // 聚焦時的外框顏色
+								borderColor: '#1c3150', // 聚焦時的外框顏色
 							},
 						}}
 					>
-						<MenuItem value={'timeClose'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'timeClose'} sx={{ color: '#1c3150' }}>
 							開課時間近到遠
 						</MenuItem>
-						<MenuItem value={'timeFar'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'timeFar'} sx={{ color: '#1c3150' }}>
 							開課時間遠到近
 						</MenuItem>
-						<MenuItem value={'peopleLess'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'peopleLess'} sx={{ color: '#1c3150' }}>
 							報名人數少到多
 						</MenuItem>
-						<MenuItem value={'people'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'people'} sx={{ color: '#1c3150' }}>
 							報名人數多到少
 						</MenuItem>
-						<MenuItem value={'cheap'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'cheap'} sx={{ color: '#1c3150' }}>
 							價錢便宜到貴
 						</MenuItem>
-						<MenuItem value={'expensive'} sx={{ color: '#fe6f67' }}>
+						<MenuItem value={'expensive'} sx={{ color: '#1c3150' }}>
 							價錢貴到便宜
 						</MenuItem>
 					</Select>
@@ -161,20 +161,20 @@ export default function FilterBox(props) {
 						getAriaValueText={valuetext}
 						max={5000}
 						sx={{
-							color: '#fe6f67',
+							color: '#1c3150',
 						}}
 					/>
 				</Box>
-				<FormControlLabel
+				{/* <FormControlLabel
 					control={
 						<Checkbox
 							defaultChecked
-							sx={{ color: '#fe6f67', '&.Mui-checked': { color: '#fe6f67' } }}
+							sx={{ color: '#1c3150', '&.Mui-checked': { color: '#1c3150' } }}
 						/>
 					}
 					label="優惠"
-					sx={{ color: '#fe6f67' }}
-				/>
+					sx={{ color: '#1c3150' }}
+				/> */}
 				<button className={styles['TIL-search']}>
 					<FaSearch className={styles['TIL-icon']} />
 				</button>
