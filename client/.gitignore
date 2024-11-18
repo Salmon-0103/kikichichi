@@ -80,4 +80,5 @@ data/product-n2m.sql
 data/test_sql
 /test-only
 
-
+# 他們的資料夾
+../sweetytime/
