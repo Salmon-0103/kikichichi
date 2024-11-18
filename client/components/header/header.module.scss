@@ -1,4 +1,5 @@
 @import '@/styles/globals-var.scss';
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
 .centerLine {
 	z-index: 100;
@@ -19,7 +20,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #fff;
+	background-color: #ffffffe1;
 	// padding: 0 60px;
 	/* background-color: #9c9c9c; */
 	text-decoration: none;
@@ -28,15 +29,16 @@
 	top: 0;
 	font-family: $major-text;
 	// box-shadow: 0 0px 20px black;
-	filter: drop-shadow(0 0px 10px $primary);
 	z-index: 10;
 }
 
-.leftArea,
-.rightArea {
-	width: calc(50% - 90px);
+.logo {
+	margin-left: 5rem;
+	margin-bottom: 2.5rem;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	font-family: 'Sour Gummy', sans-serif;
+	font-size: 2rem;
 }
 
 // .leftArea {
@@ -215,7 +217,7 @@
 			padding: 0;
 			height: 100%;
 			font-size: inherit;
-			color: $primary; 
+			color: $primary;
 		}
 	}
 }

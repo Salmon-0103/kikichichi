@@ -45,7 +45,7 @@ export default function Header(props) {
 		<>
 			<header className={`${Styles['header']}`}>
 				{/* <div className={`${Styles['centerLine']}`}> 檢查對齊用 </div> */}
-				<div className={`${Styles['leftArea']} ps-sm-4 ps-lg-5 pe-lg-5`}></div>
+				<div className={`${Styles['logo']}`}>KiKiChiChi</div>
 
 				{/* -----------------手機板------------------ */}
 				<Link href={'/'} className={`${Styles['smallLink']} ${Styles['mobileLogo']}`}>
