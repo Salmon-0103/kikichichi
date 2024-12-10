@@ -6,7 +6,7 @@
 	align-items: center;
 	justify-content: space-between;
 	box-shadow: 0 4px 8px rgba(247, 154, 154, 0.1);
-	border-bottom: .5px solid $primary2;
+	border-bottom: 0.5px solid $primary2;
 	width: 100%;
 	z-index: 10;
 
@@ -15,12 +15,15 @@
 	}
 
 	.logo {
-		height: 40px; // Adjust height as needed to fit within sidebar
-		width: auto;
+		margin-left: 5rem;
+		display: flex;
+		justify-content: center;
+		font-family: 'Sour Gummy', sans-serif;
+		font-size: 2rem;
 	}
 
 	.Badge {
-		background-color: $primary; 
+		background-color: $primary;
 		color: $primaryText;
 		padding: 5px 10px;
 		border-radius: 20px;

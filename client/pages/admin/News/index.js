@@ -142,10 +142,8 @@ export default function AdminNews(props) {
 			});
 	};
 
-	// 去除p標籤
 	const sanitizeContent = (content) => {
-		// 去除空的 <p></p> 標籤
-		const sanitizedContent = content.replace(/<p>(\s|&nbsp;)*<\/p>/g, '');
+		const sanitizedContent = content.replace(/<\/?[^>]+(>|$)/g, '');
 		// 限制字數為 150 字
 		return sanitizedContent.length > 100
 			? sanitizedContent.slice(0, 100) + '...'

@@ -29,7 +29,9 @@ export default function NewsDetail(props) {
 
 	// 移除 content 中的 <p></p> 標籤
 	const cleanContent = (content) => {
-		return content.replace(/<p>/g, '').replace(/<\/p>/g, '');
+		const tempDiv = document.createElement('div');
+		tempDiv.innerHTML = content; // 將 HTML 字串插入虛擬的 DOM 元素中
+		return tempDiv.textContent || tempDiv.innerText || ''; // 獲取純文字內容
 	};
 	return (
 		<>

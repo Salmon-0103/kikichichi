@@ -67,8 +67,8 @@ export default function Header(props) {
 								navOpen ? Styles['navOption'] : Styles['navOptionClosed']
 							}`}
 						>
-							<Link href={'/news'} className={Styles['linkText']}>
-								News
+							<Link href={'/admin/News'} className={Styles['linkText']}>
+								後台管理
 							</Link>
 						</li>
 					</ul>

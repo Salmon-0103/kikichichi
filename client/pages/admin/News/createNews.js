@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Box, FormControl, InputLabel, Select, MenuItem, TextField, Button } from '@mui/material';
 import { useRouter } from 'next/router';
-import styles from '@/styles/adminLesson.module.scss';
+import styles from '@/styles/admin.module.scss';
 import AdminThemeProvider from '../adminEdit';
 import ExpandButton from '@/components/button/expand-button';
 import { Editor } from '@tinymce/tinymce-react';
@@ -184,6 +184,7 @@ export default function AddLesson(props) {
 							{/* 文章內文 */}
 							<div className="d-flex flex-column">
 								<h2 className="text-center">文章內文</h2>
+								{/* TinyMCE編輯器 */} *
 								<Editor
 									apiKey="08lu45kwsffp8o0hqpn60voxy01adtr3qkbm7hluhxxpwhek"
 									onInit={(evt, editor) => (editorRef.current = editor)}

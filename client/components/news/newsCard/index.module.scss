@@ -47,6 +47,18 @@
 		height: 320px;
 		transition: 0.5s;
 	}
+	.LYT-content {
+		h4 {
+			display: none;
+		}
+		p {
+			display: none;
+		}
+	}
+	.btn-detai {
+		position: relative;
+	}
+
 	.LYT-hover-content {
 		margin: 0 0 10px 0;
 	}

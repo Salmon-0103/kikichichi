@@ -1,16 +1,16 @@
 @import '@/styles/globals-var.scss';
 
 .LYT-banner {
-	width: 100%;
 	margin-top: 60px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	background: no-repeat url('/photos/bg/bg-3.jpg');
-	background-size: 100% 100%;
-	border-radius: 0 0 25px 25px;
+	background: url('/photos/bg/bg-2.jpg') no-repeat center center;
+	background-size: 100%;
 	object-fit: cover;
+	height: 30rem;
+	border-radius: 0 0 25px 25px;
 }
 
 .banner-text {
@@ -19,11 +19,11 @@
 	justify-content: center;
 	text-align: center;
 	font-weight: 700;
-	font-size: 60px;
-	margin-top: -50px;
+	font-size: 80px;
+	margin-top: 10rem;
 	text-shadow: -1px -1px 0 $primaryText, 1px -1px 0 $primaryText, -1px 1px 0 $primaryText,
 		1px 1px 0 $primaryText;
-	color: $p-400;
+	color: $p-700;
 }
 
 .newsContent {
@@ -37,16 +37,12 @@
 }
 
 @media (max-width: 767px) {
-	.banner-left {
-		.image {
-			margin: 0 0 2rem 3rem;
-			width: 50%;
-			height: 50%;
-			display: flex;
-			justify-self: center;
-		}
+	.LYT-banner {
+		height: 14rem;
+		background-size: cover;
 	}
-	.banner-right {
+
+	.banner-text {
 		font-size: 40px;
 	}
 	.newsContent {

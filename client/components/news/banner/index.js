@@ -17,9 +17,7 @@ export default function Banner(props) {
 						className={Styles['image']}
 					/>
 				</div> */}
-				<div className={Styles['banner-text']}>
-					<div className="mt-5">本月精選文章</div>
-				</div>
+				<div className={Styles['banner-text']}>本月精選文章</div>
 			</div>
 		</>
 	);

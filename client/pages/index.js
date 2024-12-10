@@ -72,6 +72,7 @@ export default function News() {
 			<Header />
 			<Banner />
 			<div className="container mt-2">
+				{/* 手機板 */}
 				<div className="row">
 					<div className="filter-zone-pc d-none d-md-block">
 						<FilterBox news={news} onFilter={handleFilterBox} />
@@ -81,22 +82,14 @@ export default function News() {
 							type="text"
 							className={`${styles['CTH-keywords']}`}
 							id="keywords"
-							placeholder="搜尋文章"
+							placeholder="搜尋更多有趣的文章"
 						/>
 						<button className={styles['CTH-search']}>
 							<FaSearch className={styles['CTH-icon']} />
 						</button>
-						<button
-							className={styles['CTH-calendar']}
-							onClick={() => {
-								showBox();
-							}}
-						>
-							<FaRegCalendarAlt className={styles['CTH-icon']} />
-						</button>
 					</div>
 				</div>
-
+				{/* 資訊欄 */}
 				<div className="row justify-content-center">
 					<div className="news-card-group d-flex flex-wrap col-sm-9 col-md-8 justify-content-center">
 						{newsToShow
@@ -113,7 +106,6 @@ export default function News() {
 					</div>
 				</div>
 			</div>
-
 			{/* 分頁 */}
 			<div className="mt-5 mb-3">
 				<Pagination

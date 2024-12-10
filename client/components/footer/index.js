@@ -38,7 +38,7 @@ export default function Footer({ bgColor = 'transparent' }) {
 						<div className={Styles['centerDiv']}>
 							<h4 className={`${Styles['centerText']} text-center`}>
 								If you have any question, please contact:{' '}
-								<span className={Styles['pink']}>sweetytime@gmail.com</span>
+								<span className={Styles['pink']}>perhapstill@gmail.com</span>
 							</h4>
 						</div>
 						<div className={Styles['rightDiv']}>

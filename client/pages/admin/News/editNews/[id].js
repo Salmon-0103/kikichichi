@@ -7,7 +7,7 @@ import { Editor } from '@tinymce/tinymce-react';
 import AdminLayout from '@/components/AdminLayout';
 import AdminThemeProvider from '../../adminEdit';
 import ExpandButton from '@/components/button/expand-button';
-import styles from '@/styles/adminLesson.module.scss';
+import styles from '@/styles/admin.module.scss';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Directions } from '@mui/icons-material';
@@ -283,8 +283,8 @@ export default function EditNews(props) {
 													],
 													toolbar:
 														'undo redo | formatselect | bold italic backcolor | \
-                  alignleft aligncenter alignright alignjustify | \
-                  bullist numlist outdent indent | removeformat | help',
+                  										alignleft aligncenter alignright alignjustify | \
+                 										bullist numlist outdent indent | removeformat | help',
 												}}
 											/>
 											<div className="mt-2">
