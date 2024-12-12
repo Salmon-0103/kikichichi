@@ -1,45 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Styles from './header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import MenuButton from '../menuButton';
-import { useCart } from '@/context/cartContext';
-import { useUser } from '@/context/userContext';
-import { useSession, signOut } from 'next-auth/react';
-import { useRouter } from 'next/router';
-import { FiLogOut } from 'react-icons/fi';
+import { MdOutlineDisplaySettings } from 'react-icons/md';
 
 export default function Header(props) {
 	const [navOpen, setNavOpen] = useState(false);
-	const { cart, handleCart } = useCart();
-	const { user, logout } = useUser();
-	const router = useRouter();
-
-	const handleAccountClick = (e) => {
-		e.preventDefault();
-		if (user) {
-			// 直接使用 context 中的 user
-			router.push('/user/account/profile');
-		} else {
-			router.push('/login');
-		}
-	};
-
-	const handleCartClick = (e) => {
-		e.preventDefault();
-		if (user) {
-			// 直接使用 context 中的 user
-			router.push('/cart');
-		} else {
-			router.push('/login');
-		}
-	};
-
-	// 處理登出
-	const handleLogout = async () => {
-		await logout(); // 使用 context 中的 logout 函數
-		router.push('/');
-	};
 
 	return (
 		<>
@@ -48,6 +15,21 @@ export default function Header(props) {
 				<Link href={'/'}>
 					<div className={`${Styles['logo']}`}>KiKiChiChi</div>
 				</Link>
+				<Link href={'/admin/News'}>
+					<div className={`${Styles['admin']} me-3`}>
+						<MdOutlineDisplaySettings
+							size={35}
+							style={{
+								color: '#1c3150',
+								textAlign: 'right',
+								margin: '0.1rem',
+								paddingBottom: '0.3rem',
+							}}
+						/>
+						後台管理
+					</div>
+				</Link>
+
 				{/* -----------------手機板------------------ */}
 				<Link href={'/'} className={`${Styles['smallLink']} ${Styles['mobileLogo']}`}>
 					{/* <Image src={'/icon/sweet_time_logo1.png'} alt="" width={74} height={40} /> */}
@@ -60,7 +42,6 @@ export default function Header(props) {
 						setNavOpen(!navOpen);
 					}}
 				/>
-
 				<div className={`${navOpen ? Styles['navMobile'] : Styles['navMobileClosed']}`}>
 					<ul className={Styles['navList']}>
 						<li
@@ -69,6 +50,15 @@ export default function Header(props) {
 							}`}
 						>
 							<Link href={'/admin/News'} className={Styles['linkText']}>
+								<MdOutlineDisplaySettings
+									size={35}
+									style={{
+										color: '#1c3150',
+										textAlign: 'right',
+										margin: '0.1rem',
+										paddingBottom: '0.3rem',
+									}}
+								/>
 								後台管理
 							</Link>
 						</li>

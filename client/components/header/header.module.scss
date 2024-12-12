@@ -1,5 +1,10 @@
 @import '@/styles/globals-var.scss';
+
+// 英文字體
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+// 中文字體
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
 .centerLine {
 	z-index: 100;
@@ -10,74 +15,41 @@
 	box-shadow: 0 0 0px 1px black;
 }
 
-.space-control {
-	// width: calc((100% - 200px) / 6);
-}
-
 .header {
 	width: 100%;
-	height: 60px;
+	height: 3rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #ffffffe1;
+	background-color: #ffffff93;
 	// padding: 0 60px;
 	/* background-color: #9c9c9c; */
 	text-decoration: none;
-	color: $primary;
 	position: fixed;
 	top: 0;
-	font-family: $major-text;
+	font-family: 'Sour Gummy', sans-serif;
 	// box-shadow: 0 0px 20px black;
 	z-index: 10;
 }
 
 .logo {
-	margin-left: 5rem;
-	margin-bottom: 2.5rem;
+	margin-left: 7rem;
+	margin-bottom: 2.2rem;
 	display: flex;
 	justify-content: center;
 	font-family: 'Sour Gummy', sans-serif;
 	font-size: 2rem;
-}
-
-// .leftArea {
-// 	padding-left: 5%;
-// 	padding-right: 2%;
-// }
-
-// .rightArea {
-// 	padding-left: 0%;
-// 	padding-right: 3%;
-// }
-
-.halfCircle {
-	display: inline-block;
-	background: white;
-	width: 180px;
-	height: 150px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	position: relative;
-	top: -5px;
-	// left: 20px;
-	/* box-shadow: inherit; 內部元素繼承容器的陰影 */
-}
-
-.logo {
+	color: $primary;
 	position: relative;
 	top: 20px;
 }
 
-.icons {
-	display: flex;
-	align-items: center;
-}
-
-.icon {
-	margin-right: 10px;
+.admin {
+	margin-top: 0.2rem;
+	color: $primary;
+	font-size: 1.2rem;
+	font-family: 'LXGW WenKai Mono TC', monospace;
+	font-weight: 700;
 }
 
 .bigLink {
@@ -143,19 +115,15 @@
 
 .linkText {
 	color: $primary;
+	font-family: 'LXGW WenKai Mono TC', monospace;
+	font-weight: 700;
 }
 
-// .mobileLogo {
-// 	// position: absolute;
-// 	// left: 5%;
-// }
-
-// .menuButton {
-// 	position: absolute;
-// 	right: 5%;
-// }
-
 @media (max-width: 768px) {
+	.admin {
+		display: none;
+	}
+
 	.header {
 		height: 65px;
 		padding: 20px;

@@ -15,7 +15,7 @@ export default function NewsCard({
 	const sanitizeContent = (content) => {
 		const sanitizedContent = content.replace();
 		return sanitizedContent.length > 100
-			? sanitizedContent.slice(0, 78) + '...'
+			? sanitizedContent.slice(0, 100) + '...'
 			: sanitizedContent;
 	};
 	return (

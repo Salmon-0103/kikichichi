@@ -20,32 +20,9 @@ const AdminNavbar = () => {
 		<Navbar expand="lg" className={`${styles.navbar} fixed-top`}>
 			<div className="d-flex align-items-center">
 				{/* Logo */}
-				<div className={`${styles['logo']}`}>KiKiChiChi</div>
-			</div>
-			<div className="d-flex align-items-center ml-auto">
-				<div className={styles.Badge}>Hello! {user?.name || ''}</div>
-
-				{/* Icon Group */}
-				<div className={`${styles.iconGroup}`}>
-					{/* <AiOutlineBell
-						className={styles.icon}
-						style={{ fontSize: '24px', cursor: 'pointer' }}
-					/>
-					<AiOutlineUser
-						className={styles.icon}
-						style={{ fontSize: '24px', cursor: 'pointer' }}
-					/> */}
-
-					{/* Log Out Button */}
-					{/* <div
-						className={`${styles.icon} ${styles.logout}`}
-						onClick={handleLogout}
-						style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
-					>
-						<span style={{ marginLeft: '5px' }}>Log Out</span>
-						<FiLogOut style={{ fontSize: '24px', marginLeft: '5px' }} />
-					</div> */}
-				</div>
+				<Link href={'/'}>
+					<div className={`${styles['logo']}`}>KiKiChiChi</div>
+				</Link>
 			</div>
 		</Navbar>
 	);
