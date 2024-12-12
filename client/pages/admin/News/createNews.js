@@ -9,8 +9,9 @@ import AdminThemeProvider from '../adminEdit';
 import ExpandButton from '@/components/button/expand-button';
 import { Editor } from '@tinymce/tinymce-react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
-export default function AddLesson(props) {
+export default function AddNews(props) {
 	const router = useRouter();
 	const [type, setType] = useState([]);
 	const [title, setTitle] = useState('');
@@ -64,10 +65,24 @@ export default function AddLesson(props) {
 				headers: { 'Content-Type': 'multipart/form-data' },
 			})
 			.then((res) => {
-				console.log('新增成功');
-				router.push(`/admin/News`);
+				Swal.fire({
+					title: '已成功新增一篇文章！',
+					text: '回到列表頁看看吧~',
+					icon: 'success',
+					confirmButtonText: '太棒了！',
+				}).then(() => {
+					router.push(`/admin/News`);
+				});
 			})
-			.catch((error) => console.error('新增失敗'));
+			.catch((error) => {
+				console.error('新增失敗');
+				Swal.fire({
+					title: '文章新增失敗',
+					text: '請再試一次。',
+					icon: 'error',
+					confirmButtonText: '我知道了',
+				});
+			});
 	};
 
 	// 初次加載時從 API 獲取資料
@@ -103,7 +118,10 @@ export default function AddLesson(props) {
 									component="label"
 									sx={{
 										color: '#FFF',
-										background: '#fe6f67',
+										background: '#4d6489',
+										'&:hover': {
+											background: '#1c3150',
+										},
 									}}
 								>
 									<input
@@ -132,11 +150,35 @@ export default function AddLesson(props) {
 								fullWidth
 								size="small"
 								onChange={(e) => setTitle(e.target.value)} // 更新標題
+								sx={{
+									'& .MuiInputLabel-root': {
+										color: '#4d6489', // 預設 Label 顏色
+										'&.Mui-focused': {
+											color: '#4d6489', // 點選後的 Label 顏色
+										},
+									},
+									'& .MuiOutlinedInput-root': {
+										'& fieldset': {
+											borderColor: '#4d6489', // 邊框顏色
+										},
+										'&:hover fieldset': {
+											borderColor: '#4d6489', // hover 時邊框顏色
+										},
+										'&.Mui-focused fieldset': {
+											borderColor: '#4d6489', // 聚焦時邊框顏色
+										},
+									},
+								}}
 							/>
 
 							{/* 類別選擇 */}
 							<FormControl fullWidth>
-								<InputLabel id="demo-simple-select-label">類別</InputLabel>
+								<InputLabel
+									id="demo-simple-select-label"
+									sx={{ color: '#4d6489' }} // Label 顏色
+								>
+									類別
+								</InputLabel>
 								<Select
 									labelId="demo-simple-select-label"
 									id="demo-simple-select"
@@ -144,6 +186,38 @@ export default function AddLesson(props) {
 									label="type"
 									onChange={handleChangeType}
 									size="small"
+									sx={{
+										'& .MuiOutlinedInput-notchedOutline': {
+											borderColor: '#4d6489', // 邊框顏色
+										},
+										'&:hover .MuiOutlinedInput-notchedOutline': {
+											borderColor: '#4d6489', // hover 時的邊框顏色
+										},
+										'&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+											borderColor: '#4d6489', // 聚焦時的邊框顏色
+										},
+										'& .MuiSelect-icon': {
+											color: '#4d6489', // 下拉箭頭顏色
+										},
+										'&.Mui-focused .MuiSelect-icon': {
+											color: '#4d6489', // 聚焦時下拉箭頭顏色
+										},
+										color: '#4d6489', // 預設文字顏色
+										'&.Mui-focused': {
+											color: '#4d6489', // 聚焦時文字顏色
+										},
+										'& .MuiInputLabel-root': {
+											color: '#4d6489', // 預設 Label 顏色
+											'&.Mui-focused': {
+												color: '#4d6489', // 聚焦時的 Label 顏色
+											},
+										},
+										'& .MuiSelect-root': {
+											'& .MuiInputLabel-root': {
+												color: '#4d6489', // 確保點擊後 Label 顏色正確
+											},
+										},
+									}}
 								>
 									{type.map((name) => (
 										<MenuItem value={name.id} key={name.id}>
@@ -164,9 +238,16 @@ export default function AddLesson(props) {
 									onChange={handleTime}
 								/>
 							</div>
+
+							{/* 狀態欄位 */}
 							<div className="d-flex flex-column mt-2">
 								<FormControl fullWidth>
-									<InputLabel id="demo-simple-select-label">狀態</InputLabel>
+									<InputLabel
+										id="demo-simple-select-label"
+										sx={{ color: '#4d6489' }} // Label 顏色
+									>
+										狀態
+									</InputLabel>
 									<Select
 										labelId="demo-simple-select-label"
 										id="demo-simple-select"
@@ -174,6 +255,18 @@ export default function AddLesson(props) {
 										label="status"
 										onChange={handleChangeSta}
 										size="small"
+										sx={{
+											'& .MuiOutlinedInput-notchedOutline': {
+												borderColor: '#4d6489',
+											},
+											'&:hover .MuiOutlinedInput-notchedOutline': {
+												borderColor: '#4d6489',
+											},
+											'&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+												borderColor: '#4d6489',
+											},
+											color: '#4d6489', // 選擇的文字顏色
+										}}
 									>
 										<MenuItem value={1}>上架中</MenuItem>
 										<MenuItem value={0}>下架</MenuItem>
@@ -183,8 +276,8 @@ export default function AddLesson(props) {
 
 							{/* 文章內文 */}
 							<div className="d-flex flex-column">
-								<h2 className="text-center">文章內文</h2>
-								{/* TinyMCE編輯器 */} *
+								<h2 className="text-center">文章內容</h2>
+								{/* TinyMCE編輯器 */}
 								<Editor
 									apiKey="08lu45kwsffp8o0hqpn60voxy01adtr3qkbm7hluhxxpwhek"
 									onInit={(evt, editor) => (editorRef.current = editor)}
@@ -200,6 +293,7 @@ export default function AddLesson(props) {
 											'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
 									}}
 								/>
+								{/* 儲存按鈕 */}
 								<div className="mt-2">
 									<Link
 										href={`../admin/News`}
@@ -210,10 +304,13 @@ export default function AddLesson(props) {
 											onClick={handleSubmit}
 											sx={{
 												color: '#fff',
-												background: '#fe6f67',
+												background: '#4d6489',
+												'&:hover': {
+													background: '#1c3150',
+												},
 											}}
 										>
-											完成
+											儲存
 										</Button>
 									</Link>
 								</div>

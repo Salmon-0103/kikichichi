@@ -4,7 +4,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	background-color: $p-400;
+	background-color: $primary2;
 	color: White;
 	padding: 10px;
 	border-radius: 10px;
@@ -15,7 +15,7 @@
 	width: 50px;
 	height: 50px;
 	white-space: nowrap;
-	border: 0.1px solid #ffa08f;
+	border: 0.1px solid $secondary;
 	// box-shadow: 5px 5px 10px #fe6f67;
 
 	.icon {
@@ -34,7 +34,7 @@
 
 	&:hover {
 		width: 200px;
-		background-color: $p-200;
+		background-color: $primary;
 
 		.button-text {
 			display: block; // hover 時顯示文字
@@ -57,7 +57,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	background-color: $p-500;
+	background-color: $primary2;
 	color: $primaryText;
 	border-radius: 10px;
 	cursor: pointer;
@@ -83,7 +83,7 @@
 
 	&:hover {
 		width: 150px;
-		background-color: $p-200;
+		background-color: $primary;
 
 		.button-text {
 			display: block; // hover 時顯示文字

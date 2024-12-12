@@ -49,24 +49,30 @@ export default function NewsDetail(props) {
 							<div className={`${styles['LYT-newsDetailAll']}`}>
 								<div className={`${styles['LYT-ceated']}`}>
 									<h2 className="fw-bold">{news.title}</h2>
+									{/* 圖片 */}
+
+									{news.img_path && (
+										<div className="d-flex justify-content-center">
+											<Image
+												src={`/photos/articles/${news.img_path}`} // 確保這是完整路徑
+												width={800}
+												height={500}
+												style={{
+													objectFit: 'contain',
+													display: 'flex',
+													justifyContent: 'center',
+												}}
+												alt={news.title || 'News Image'}
+												className={styles['image']}
+												priority // 優先加載
+											/>
+										</div>
+									)}
 									<h4 className="d-flex justify-content-center">
 										by 甜覓小編 {news.createdAt}
 									</h4>
 								</div>
 
-								{/* 圖片 */}
-
-								{news.img_path && (
-									<Image
-										src={`/photos/articles/${news.img_path}`} // 確保這是完整路徑
-										width={800}
-										height={500}
-										style={{ objectFit: 'contain' }}
-										alt={news.title || 'News Image'}
-										className={styles['image']}
-										priority // 優先加載
-									/>
-								)}
 								{/* 文字區 */}
 								<div
 									className={`${styles['LYT-newsDetail-content']}`}
