@@ -143,7 +143,7 @@ export default function AdminNews(props) {
 	};
 
 	const sanitizeContent = (content) => {
-		const sanitizedContent = content.replace(/<\/?[^>]+(>|$)/g, '');
+		const sanitizedContent = content.replace();
 		// 限制字數為 150 字
 		return sanitizedContent.length > 100
 			? sanitizedContent.slice(0, 100) + '...'
@@ -162,9 +162,7 @@ export default function AdminNews(props) {
 				/>
 				<AddButton href={'/admin/News/createNews'} />
 			</div>
-
 			<AdminTab tabs={tabs} activeTab={status} setActiveTab={setStatus} />
-
 			{/* 欄位內容 */}
 			<table className={`${styles['LYT-table']} w-100`}>
 				<thead className="text-center">

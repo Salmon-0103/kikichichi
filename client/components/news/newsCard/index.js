@@ -12,6 +12,12 @@ export default function NewsCard({
 	createdAt = '2024-08-16 14:50:00',
 	activation = 1,
 }) {
+	const sanitizeContent = (content) => {
+		const sanitizedContent = content.replace();
+		return sanitizedContent.length > 100
+			? sanitizedContent.slice(0, 78) + '...'
+			: sanitizedContent;
+	};
 	return (
 		<>
 			{/* 卡片區 */}
@@ -23,10 +29,10 @@ export default function NewsCard({
 						height={200}
 						className={`${Styles['LYT-news-card-img']}`}
 					/>
-					<div className={`${Styles['LYT-content']}`}>
+					<div className={`${Styles['LYT-content']} mb-4`}>
 						<h4>{`${title.slice(0, 25) + '...'} `}</h4>
-						<p>{`${content.slice(0, 50) + '...'}`}</p>
-						<p>{`${createdAt}`}</p>
+						<p dangerouslySetInnerHTML={{ __html: sanitizeContent(content) }} />
+						<p className={`${Styles['time']}`}>{`${createdAt}`}</p>
 						<Link href={`/${id}`}>
 							<button className="btn">
 								<FaArrowRightLong size={20} />

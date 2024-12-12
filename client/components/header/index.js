@@ -45,8 +45,9 @@ export default function Header(props) {
 		<>
 			<header className={`${Styles['header']}`}>
 				{/* <div className={`${Styles['centerLine']}`}> 檢查對齊用 </div> */}
-				<div className={`${Styles['logo']}`}>KiKiChiChi</div>
-
+				<Link href={'/'}>
+					<div className={`${Styles['logo']}`}>KiKiChiChi</div>
+				</Link>
 				{/* -----------------手機板------------------ */}
 				<Link href={'/'} className={`${Styles['smallLink']} ${Styles['mobileLogo']}`}>
 					{/* <Image src={'/icon/sweet_time_logo1.png'} alt="" width={74} height={40} /> */}

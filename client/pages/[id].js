@@ -28,11 +28,16 @@ export default function NewsDetail(props) {
 	}, [id]);
 
 	// 移除 content 中的 <p></p> 標籤
-	const cleanContent = (content) => {
-		const tempDiv = document.createElement('div');
-		tempDiv.innerHTML = content; // 將 HTML 字串插入虛擬的 DOM 元素中
-		return tempDiv.textContent || tempDiv.innerText || ''; // 獲取純文字內容
+	// const cleanContent = (content) => {
+	// 	const tempDiv = document.createElement('div');
+	// 	tempDiv.innerHTML = content; // 將 HTML 字串插入虛擬的 DOM 元素中
+	// 	return tempDiv.textContent || tempDiv.innerText || ''; // 獲取純文字內容
+	// };
+	const sanitizeContent = (content) => {
+		const sanitizedContent = content.replace();
+		return sanitizedContent;
 	};
+
 	return (
 		<>
 			<Header />
@@ -63,9 +68,12 @@ export default function NewsDetail(props) {
 									/>
 								)}
 								{/* 文字區 */}
-								<div className={`${styles['LYT-newsDetail-content']}`}>
-									<p>{cleanContent(news.content)}</p>
-								</div>
+								<div
+									className={`${styles['LYT-newsDetail-content']}`}
+									dangerouslySetInnerHTML={{
+										__html: sanitizeContent(news.content),
+									}}
+								/>
 							</div>
 						</div>
 					</div>
