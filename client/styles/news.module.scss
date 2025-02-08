@@ -1,5 +1,8 @@
 @import '@/styles/globals-var.scss';
 
+// 英文字體
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
 .LYT-sm-news-box {
 	color: $primary;
 	background-color: $p-100;
@@ -183,6 +186,15 @@
 		width: 25px;
 		height: 25px;
 	}
+}
+
+.carouselTitle {
+	display: flex;
+	justify-content: center;
+	font-family: 'Sour Gummy', sans-serif;
+	font-size: 3rem;
+	letter-spacing: 1rem;
+	font-weight: bold;
 }
 
 @media (max-width: 767px) {

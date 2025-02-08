@@ -8,7 +8,9 @@ import Pagination from '@/components/pagination';
 import Footer from '@/components/footer';
 import styles from '@/styles/news.module.scss';
 import axios from 'axios';
+// import Carousel from '@/components/carousel';
 import { FaRegCalendarAlt, FaSearch } from 'react-icons/fa';
+import Carousel from '@/components/news/carousel';
 
 export default function News() {
 	const [showList, setShowList] = useState(false);
@@ -106,14 +108,24 @@ export default function News() {
 					</div>
 				</div>
 			</div>
+
 			{/* 分頁 */}
-			<div className="mt-5 mb-3">
+			<div className="mt-2 mb-5">
 				<Pagination
 					currentPage={currentPage}
 					totalPages={totalPages}
 					onPageChange={setCurrentPage}
 					changeColor="#fe6f67"
 				/>
+			</div>
+			<hr />
+
+			{/* 輪播區 */}
+			<h4 className={`${styles['carouselTitle']} mt-3`}>Dessert</h4>
+			<div className="row justify-content-center m-0 mt-3 mb-3">
+				<div className="news-card-group d-flex justify-content-center">
+					<Carousel />
+				</div>
 			</div>
 			<Footer />
 		</>
