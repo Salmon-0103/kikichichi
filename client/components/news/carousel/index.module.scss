@@ -1,0 +1,47 @@
+@import '@/styles/globals-var.scss';
+
+.carousel-inner {
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.carouselSize {
+	width: 50rem;
+	height: 30rem;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.carouselBtnLeft {
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	transform: translateY(-50%);
+	width: 3rem;
+	height: 3rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+}
+
+.carouselBtnRight {
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translateY(-50%);
+	width: 3rem;
+	height: 3rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+}
+
+.carouselIcon {
+	width: 1.5rem;
+	height: 1.5rem;
+}
