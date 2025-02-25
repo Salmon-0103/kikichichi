@@ -35,4 +35,6 @@ const nextConfig = {
   // },
 }
 
-module.exports = nextConfig
+module.exports = {
+  basePath: "/my-app",
+};
