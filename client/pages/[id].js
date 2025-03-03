@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Header from '@/components/header';
-import Suggest from '@/components/news/suggest';
+// import Suggest from '@/components/news/suggest';
 import Footer from '@/components/footer';
 import styles from '@/styles/newsDetail.module.scss';
 import { useRouter } from 'next/router';

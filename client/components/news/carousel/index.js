@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './index.module.scss';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Carousel() {
+	useEffect(() => {
+		import('bootstrap/dist/js/bootstrap.bundle.min.js');
+	}, []);
+
 	return (
 		<div id="carouselSlideOnly" className="carousel carousel-fade" data-bs-ride="carousel">
 			<div class="carousel-inner m-0 p-0">
